@@ -40,15 +40,15 @@
     <Analyzer Include="D:\Unity\2022.3.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\UIManager.cs" />
-     <Compile Include="Assets\BuildingSystem.cs" />
-     <Compile Include="Assets\Controller.cs" />
-     <Compile Include="Assets\MoviementPlayer\ThirdPersonController\Scripts\ThirdPersonController.cs" />
-     <Compile Include="Assets\MoviementPlayer\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
+     <Compile Include="Assets\Scripts\BuildingSystem.cs" />
+     <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
+     <Compile Include="Assets\Scripts\ItemPlacementController.cs" />
+     <Compile Include="Assets\Scripts\PlayerControls.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\MoviementPlayer\InputSystem\ControlerInput.cs" />
-     <Compile Include="Assets\PreviewController.cs" />
-     <Compile Include="Assets\MoviementPlayer\ThirdPersonController\Scripts\ItemPlacementController.cs" />
-     <Compile Include="Assets\PlayerControls.cs" />
+     <Compile Include="Assets\Scripts\PreviewController.cs" />
+     <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
+     <Compile Include="Assets\Scripts\Controller.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
