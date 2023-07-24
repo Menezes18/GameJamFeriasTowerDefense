@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.095631495, g: 0.42344525, b: 0.64674735, a: 1}
+  m_IndirectSpecularColor: {r: 0.09563164, g: 0.4234458, b: 0.6467483, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7295,6 +7295,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PinguHead
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494316308227079478, guid: e800499be6e624a13a9536878d841020,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6163135691306220139, guid: e800499be6e624a13a9536878d841020,
         type: 3}

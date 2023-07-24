@@ -40,12 +40,8 @@
     <Analyzer Include="D:\Unity\2022.3.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
      <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
-=======
-     <Compile Include="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
-     <Compile Include="Assets/OToon- URP Toon Shading/Demo(Can be delete)/Plugins/SprintBone/Editor/SpringBoneEditor.cs" />
->>>>>>> Stashed changes
+     <Compile Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\SprintBone\Editor\SpringBoneEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\2022.3.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
