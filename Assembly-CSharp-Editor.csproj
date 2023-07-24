@@ -40,7 +40,12 @@
     <Analyzer Include="D:\Unity\2022.3.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
      <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+=======
+     <Compile Include="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
+     <Compile Include="Assets/OToon- URP Toon Shading/Demo(Can be delete)/Plugins/SprintBone/Editor/SpringBoneEditor.cs" />
+>>>>>>> Stashed changes
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\2022.3.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -832,6 +837,14 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{54bea9ce-bb96-7db9-f668-0fa836af1b51}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="OtoonShader.csproj">
+      <Project>{60ba4a33-9bc5-76fa-cb3f-c14d4803b085}</Project>
+      <Name>OtoonShader</Name>
+    </ProjectReference>
+    <ProjectReference Include="OtoonEditor.csproj">
+      <Project>{a98691a4-4ed0-9c55-63f8-8560ad4a2c0c}</Project>
+      <Name>OtoonEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
