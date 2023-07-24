@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    public string attackTargetTag = "Castelo";
     public Transform attackTarget;
     public float attackRange = 2f;
     public float attackInterval = 2f;
@@ -26,6 +27,15 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         navMeshAgent.speed = movementSpeed; // Configura a velocidade de movimento do inimigo.
+        GameObject targetObject = GameObject.FindGameObjectWithTag(attackTargetTag);
+        if (targetObject != null)
+        {
+            attackTarget = targetObject.transform;
+        }
+        else
+        {
+            Debug.LogWarning("Nenhum objeto encontrado com a tag " + attackTargetTag);
+        }
     }
 
     private void Update()
