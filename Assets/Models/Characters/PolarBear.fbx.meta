@@ -48,9 +48,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: BearArmature|BearDeath
-      takeName: BearArmature|BearDeath
-      internalID: -1764553235712425479
+      name: BearDeath
+      takeName: Armature.001|BearDeath
+      internalID: 8918253116102394869
       firstFrame: 0
       lastFrame: 44
       wrapMode: 0
@@ -77,9 +77,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BearArmature|BearWalk
-      takeName: BearArmature|BearWalk
-      internalID: -5340505457749967498
+      name: BearWalk
+      takeName: Armature.001|BearWalk
+      internalID: -2122585500147134488
       firstFrame: 0
       lastFrame: 49
       wrapMode: 0
@@ -88,7 +88,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -106,9 +106,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BearArmature|DefaultBear
-      takeName: BearArmature|DefaultBear
-      internalID: -3922021143481437015
+      name: DefaultBear
+      takeName: Armature.001|DefaultBear
+      internalID: 7903786023449786359
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -193,7 +193,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: Root
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -201,7 +201,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
