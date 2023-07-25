@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class WaveManager : MonoBehaviour
     public int maxExtraEnemiesPerWave = 2;
     public float waveInterval = 5f;
     public int currentWaveEnemiesAlive;
+    public bool automatico = true;
     
     private int currentWave = 0;
 
@@ -41,6 +43,11 @@ public class WaveManager : MonoBehaviour
     public void Update()
     {
         EnemyDefeated();
+        if (Keyboard.current.tKey.wasPressedThisFrame && currentWaveEnemiesAlive <= 0)
+        {
+            Debug.Log("manual");
+            SpawnWave();
+        }
     }
 
     private void SpawnEnemies(int numEnemies)
@@ -57,17 +64,19 @@ public class WaveManager : MonoBehaviour
 
     public void EnemyDefeated()
     {
-        if (currentWaveEnemiesAlive >= 0)
+        
+        if (automatico && currentWaveEnemiesAlive <= 0)
         {
             // Todos os inimigos da onda atual foram derrotados.
             // Inicie a próxima onda.
             SpawnWave();
             waveInterval--;
-            if (waveInterval >= 0)
+            if (waveInterval <= 0 )
             {
                 Debug.Log("Acabou");
             }
         }
+        
     }
 
     private GameObject GetRandomEnemyPrefab()
