@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,9 +9,11 @@ public class EnemyController : MonoBehaviour
     public float attackRange = 2f;
     public float attackInterval = 2f;
     public int attackDamage = 10;
-    public int maxHealth = 100;
+    public int maxHealth = 20;
     public float movementSpeed = 3f; // Velocidade de movimento do inimigo
     public bool isDead = false;
+
+    public WaveManager waveManager;
 
     private NavMeshAgent navMeshAgent;
     private bool isAttacking;
@@ -26,6 +29,9 @@ public class EnemyController : MonoBehaviour
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
 
+        waveManager = FindObjectOfType<WaveManager>();
+        
+
         navMeshAgent.speed = movementSpeed; // Configura a velocidade de movimento do inimigo.
         GameObject targetObject = GameObject.FindGameObjectWithTag(attackTargetTag);
         if (targetObject != null)
@@ -40,32 +46,62 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (isDead) return;
-
-        if (isAttacking)
+        // Verifica se o inimigo está morto
+        if (isDead)
         {
-            attackTimer -= Time.deltaTime;
-            if (attackTimer <= 0f)
-            {
-                Attack();
-                attackTimer = attackInterval;
-            }
-            return;
+            HandleDeath();
         }
-
-        float distanceToTarget = Vector3.Distance(transform.position, attackTarget.position);
-        if (distanceToTarget <= attackRange)
+        else if (isAttacking)
         {
-            isAttacking = true;
-            navMeshAgent.isStopped = true;
-            Attack();
+            // Verifica se o inimigo está atacando
+            HandleAttack();
         }
         else
         {
+            // Comportamento de movimento normal se o inimigo estiver vivo e não estiver atacando
+            HandleMovement();
+        }
+    }
+
+    private void HandleDeath()
+    {
+        // Adiciona um Debug.Log indicando que o inimigo morreu.
+        Debug.Log("Inimigo morreu!");
+
+        // Se o inimigo estiver morto, pare de se mover.
+        navMeshAgent.isStopped = true;
+    }
+
+    private void HandleAttack()
+    {
+        // Reduz o tempo de intervalo entre ataques
+        attackTimer -= Time.deltaTime;
+        if (attackTimer <= 0f)
+        {
+            // Realiza o ataque e reinicia o temporizador de ataque
+            Attack();
+            attackTimer = attackInterval;
+        }
+    }
+
+    private void HandleMovement()
+    {
+        float distanceToTarget = Vector3.Distance(transform.position, attackTarget.position);
+        if (distanceToTarget <= attackRange)
+        {
+            // O inimigo está na distância de ataque, então começa a atacar
+            isAttacking = true;
+            navMeshAgent.isStopped = true;
+        }
+        else
+        {
+            // O inimigo não está na distância de ataque, continua se movendo em direção ao alvo
             navMeshAgent.isStopped = false; // Garante que o NavMeshAgent esteja habilitado para se mover.
             navMeshAgent.SetDestination(attackTarget.position);
         }
     }
+
+
 
     private void Attack()
     {
@@ -91,12 +127,20 @@ public class EnemyController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Inimigo morreu!");
+        waveManager.currentWaveEnemiesAlive--;
 
         isDead = true;
         animator.SetBool("Death", true);
 
         currentHealth = 0;
-
+        gameObject.tag = "InimigoDeath";
+        StartCoroutine(DestruirEnemy());
         // Aqui você pode adicionar outras ações que devem ser realizadas quando o inimigo morre, como remover o GameObject do inimigo do cenário, etc.
+    }
+
+    private IEnumerator DestruirEnemy()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
     }
 }

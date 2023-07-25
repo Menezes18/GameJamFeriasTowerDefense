@@ -9,6 +9,8 @@ public class TowerController : MonoBehaviour
     public float rotationSpeed = 5f;
     public float attackRange = 10f; // Alcance de ataque da torre
 
+    public Transform towerObject; // Objeto da torre que irá girar
+
     private Transform targetEnemy;
     private float shootingTimer = 0f;
 
@@ -19,10 +21,10 @@ public class TowerController : MonoBehaviour
         if (targetEnemy != null)
         {
             // Verificar se o inimigo está dentro do alcance de ataque
-            float distanceToEnemy = Vector3.Distance(transform.position, targetEnemy.position);
+            float distanceToEnemy = Vector3.Distance(towerObject.position, targetEnemy.position);
             if (distanceToEnemy <= attackRange)
             {
-                RotateTowardsEnemy();
+                RotateTowerTowardsEnemy();
 
                 shootingTimer += Time.deltaTime;
                 if (shootingTimer >= shootingInterval)
@@ -44,12 +46,12 @@ public class TowerController : MonoBehaviour
             return;
         }
 
-        float closestDistance = Vector3.Distance(transform.position, enemies[0].transform.position);
+        float closestDistance = Vector3.Distance(towerObject.position, enemies[0].transform.position);
         targetEnemy = enemies[0].transform;
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceToEnemy = Vector3.Distance(towerObject.position, enemy.transform.position);
 
             if (distanceToEnemy < closestDistance)
             {
@@ -59,13 +61,13 @@ public class TowerController : MonoBehaviour
         }
     }
 
-    private void RotateTowardsEnemy()
+    private void RotateTowerTowardsEnemy()
     {
-        Vector3 targetDirection = targetEnemy.position - transform.position;
+        Vector3 targetDirection = targetEnemy.position - towerObject.position;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
         // Suavizar a rotação para evitar que a torre fique tremendo
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        towerObject.rotation = Quaternion.Lerp(towerObject.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     private void Shoot()
@@ -78,10 +80,11 @@ public class TowerController : MonoBehaviour
             bulletController.damage = damage;
         }
     }
+
     private void OnDrawGizmosSelected()
     {
         // Desenhar um Gizmo para representar visualmente o alcance de ataque da torre no editor.
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(towerObject.position, attackRange);
     }
 }
