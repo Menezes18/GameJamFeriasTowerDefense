@@ -52,6 +52,7 @@
      <Compile Include="Assets\BuildSystemScripts\WorldGrid.cs" />
      <Compile Include="Assets\BuildSystemScripts\BuildingData.cs" />
      <Compile Include="Assets\BuildSystemScripts\UI Scripts\BuildingPartUI.cs" />
+     <Compile Include="Assets\Scripts\BuildingSpawner.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\TowerController.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
@@ -75,6 +76,7 @@
      <Compile Include="Assets\BuildSystemScripts\BaseManager.cs" />
      <Compile Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\SprintBone\SpringBone.cs" />
      <Compile Include="Assets\MoviementPlayer\PlayerControls.cs" />
+     <Compile Include="Assets\Scripts\UiButtonData.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\UnityChanSSU" />

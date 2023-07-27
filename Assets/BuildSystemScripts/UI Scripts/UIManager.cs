@@ -6,25 +6,29 @@ using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
-    public BuildingPanelUI BuildPanel;
+    public GameObject BuildPanel;
 
     private void Start()
     {
-        BuildPanel.gameObject.SetActive(false);
-        SetMouseCursorState(BuildPanel.gameObject.activeInHierarchy);
+        BuildPanel.SetActive(false);
+        SetMouseCursorState(false); // Definir o cursor como invisível e confinado no início.
     }
 
     private void Update()
     {
         if (Keyboard.current.tabKey.wasPressedThisFrame)
         {
-            BuildPanel.gameObject.SetActive(!BuildPanel.gameObject.activeInHierarchy);
-            if (BuildPanel.gameObject.activeInHierarchy) BuildPanel.PopulateButtons();
-            SetMouseCursorState(BuildPanel.gameObject.activeInHierarchy);
+            BuildPanel.SetActive(true);
+            SetMouseCursorState(true); // Ativar o cursor quando o painel estiver visível.
         }
     }
 
-    private void SetMouseCursorState(bool newState)
+    public void ClosePainel()
+    {
+        BuildPanel.SetActive(false);
+    }
+
+    public void SetMouseCursorState(bool newState)
     {
         Cursor.visible = newState;
         Cursor.lockState = newState ? CursorLockMode.Confined : CursorLockMode.Locked;

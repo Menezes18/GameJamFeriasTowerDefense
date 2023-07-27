@@ -50,12 +50,11 @@ public class Building : MonoBehaviour
         _boxCollider.enabled = false;
         if (_colliders != null) _colliders.gameObject.SetActive(true);
         UpdateMaterial(_defaultMaterial);
-        gameObject.layer = 10;
+        gameObject.layer = 6;
         gameObject.name = _assignedData.DisplayName + " - " + transform.position;
-
-        if (SaveData == null) SaveData = new BuildingSaveData(gameObject.name, _assignedData, transform.position, transform.rotation);
-        if (!SaveGameManager.Data.BuildingSaveData.Contains(SaveData)) SaveGameManager.Data.BuildingSaveData.Add(SaveData);
     }
+
+
 
     public void UpdateMaterial(Material newMaterial)
     {
@@ -88,12 +87,8 @@ public class Building : MonoBehaviour
     private void OnDestroy()
     {
         Debug.Log("Destroying object");
-        if (SaveGameManager.Data.BuildingSaveData.Contains(SaveData))
-        {
-            Debug.Log("Found data so removing it");
-            SaveGameManager.Data.BuildingSaveData.Remove(SaveData);
-        }
     }
+
 }
 
 [System.Serializable]

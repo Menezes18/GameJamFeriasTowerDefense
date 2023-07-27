@@ -11,7 +11,7 @@ public class BuildTool : MonoBehaviour
     [SerializeField] private float _rayDistance;
     [SerializeField] private LayerMask _buildModeLayerMask;
     [SerializeField] private LayerMask _deleteModeLayerMask;
-    [SerializeField] private int _defaultLayerInt = 8;
+    [SerializeField] private int _defaultLayerInt = 6;
     [SerializeField] private Transform _rayOrigin;
     [SerializeField] private Material _buildingMatPositive;
     [SerializeField] private Material _buildingMatNegative;
@@ -23,6 +23,9 @@ public class BuildTool : MonoBehaviour
     private Building _spawnedBuilding;
     private Building _targetBuilding;
     private Quaternion _lastRotation;
+    
+    public bool towerActivated = false;  
+    public BuildingData _currentBuildData;
 
     private void Start()
     {
@@ -38,9 +41,13 @@ public class BuildTool : MonoBehaviour
     {
         BuildingPanelUI.OnPartChosen -= ChoosePart;
     }
-
+    public void SetCurrentBuildingData(BuildingData buildingData)
+    {
+        _currentBuildData = buildingData;
+    }
     private void ChoosePart(BuildingData data)
     {
+        data = _currentBuildData;
         if (_deleteModeEnabled)
         {
             if (_targetBuilding != null && _targetBuilding.FlaggedForDelete) _targetBuilding.RemoveDeleteFlag();
@@ -59,6 +66,7 @@ public class BuildTool : MonoBehaviour
         _spawnedBuilding = go.AddComponent<Building>();
         _spawnedBuilding.Init(data);
         _spawnedBuilding.transform.rotation = _lastRotation;
+        
     }
 
     private void Update()
@@ -68,8 +76,48 @@ public class BuildTool : MonoBehaviour
         
         if (_deleteModeEnabled) DeleteModeLogic();
         else BuildModeLogic();
-
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            ActivatePreviewAndPrefab();
+        }
     }
+    // Variável de controle para rastrear se a torre já foi ativada
+
+    public void ActivatePreviewAndPrefab()
+    {
+        if (towerActivated)
+        {
+            Debug.Log("Tower already activated.");
+            return;
+        }
+
+        if (_currentBuildData == null)
+        {
+            Debug.Log("No BuildData selected.");
+            return;
+        }
+
+        if (_spawnedBuilding != null)
+        {
+            Debug.Log("Preview already activated.");
+            return;
+            
+        }
+
+        var go = new GameObject
+        {
+            layer = _defaultLayerInt,
+            name = "Build Preview"
+        };
+
+        
+        _spawnedBuilding = go.AddComponent<Building>();
+        _spawnedBuilding.Init(_currentBuildData);
+        _spawnedBuilding.transform.rotation = _lastRotation;
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAA");
+        towerActivated = true;
+    }
+
 
     private void DeleteObjectPreview()
     {

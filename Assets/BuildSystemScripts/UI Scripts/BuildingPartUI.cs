@@ -18,10 +18,12 @@ public class BuildingPartUI : MonoBehaviour
         _button = GetComponentInChildren<Button>();
         _button.onClick.AddListener(OnButtonClick);
         _button.GetComponent<Image>().sprite = _assignedData.Icon;
+        Debug.Log("Aaa");
     }
 
-    private void OnButtonClick()
+    public void OnButtonClick()
     {
         _parentDisplay.OnClick(_assignedData);
+        Debug.Log("Aaa");
     }
 }
