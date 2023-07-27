@@ -10,6 +10,7 @@ TagManager:
   - Inimigo
   - InimigoDeath
   - PreviewTower
+  - Tower
   layers:
   - Default
   - TransparentFX

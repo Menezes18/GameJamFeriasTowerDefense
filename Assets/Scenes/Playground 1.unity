@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCastleHealth: 100
-  playerMoney: 0
+  playerMoney: 580
 --- !u!4 &189010796
 Transform:
   m_ObjectHideFlags: 0
@@ -5065,6 +5065,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 57cd223fd5621a248a09077519ba304d, type: 2}
   buildTool: {fileID: 736807552}
   uiManager: {fileID: 0}
+  gameManager: {fileID: 0}
+  towerCosts: 64000000c80000002c010000
+  money: 0
 --- !u!4 &1626946625
 Transform:
   m_ObjectHideFlags: 0
