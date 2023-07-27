@@ -110,6 +110,7 @@ public class EnemyController : MonoBehaviour
         Debug.Log("Inimigo atacando!");
         gameManager.DamageCastle(10);
         Destroy(gameObject);
+        waveManager.currentWaveEnemiesAlive--;
 
         // Lógica de ataque aqui (por exemplo, causar dano ao jogador).
     }
@@ -134,6 +135,7 @@ public class EnemyController : MonoBehaviour
         waveManager.currentWaveEnemiesAlive--;
 
         isDead = true;
+        gameManager.EarnMoney(40); //colocando dinheiro para o player
         animator.SetBool("Death", true);
 
         currentHealth = 0;

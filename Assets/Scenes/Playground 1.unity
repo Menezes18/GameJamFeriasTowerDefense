@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 2114283754330233425}
-  m_IndirectSpecularColor: {r: 0.029152151, g: 0.0644452, b: 0.126951, a: 1}
+  m_IndirectSpecularColor: {r: 0.029152177, g: 0.06444564, b: 0.1269514, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 66b0aff2993314630bc690f406567c37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc8aa396f7f3b34428cf554cfe373738, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -688,6 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCastleHealth: 100
   playerMoney: 580
+  gameManagerUI: {fileID: 0}
 --- !u!4 &189010796
 Transform:
   m_ObjectHideFlags: 0
@@ -1728,7 +1729,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486112102}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &486112106
 Camera:
   m_ObjectHideFlags: 0
@@ -1747,7 +1748,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -1762,7 +1763,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 3
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2205,7 +2206,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544034480}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &544034483
 Camera:
   m_ObjectHideFlags: 0
@@ -2607,7 +2608,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687303085}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &687303088
 Camera:
   m_ObjectHideFlags: 0
@@ -5856,7 +5857,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684181833}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1684181836
 Camera:
   m_ObjectHideFlags: 0
