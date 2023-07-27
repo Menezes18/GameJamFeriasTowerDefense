@@ -114,10 +114,28 @@ public class BuildTool : MonoBehaviour
         _spawnedBuilding = go.AddComponent<Building>();
         _spawnedBuilding.Init(_currentBuildData);
         _spawnedBuilding.transform.rotation = _lastRotation;
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAA");
-        towerActivated = true;
+        
+        
     }
+    
+    public void DeactivatePreviewAndPrefab()
+    {
+        if (!towerActivated)
+        {
+            Debug.Log("Tower already deactivated.");
+            return;
+        }
 
+        // Remover o GameObject da torre e limpar a variável _spawnedBuilding
+        if (_spawnedBuilding != null)
+        {
+            Destroy(_spawnedBuilding.gameObject);
+            _spawnedBuilding = null;
+        }
+
+        // Definir a torre como desativada
+        towerActivated = false;
+    }
 
     private void DeleteObjectPreview()
     {
@@ -190,10 +208,10 @@ public class BuildTool : MonoBehaviour
     private void PositionBuildingPreview()
     {
         _spawnedBuilding.UpdateMaterial(_spawnedBuilding.IsOverlapping ? _buildingMatNegative : _buildingMatPositive);
-        
+    
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
-            _spawnedBuilding.transform.Rotate(0,_rotateSnapAngle,0);
+            _spawnedBuilding.transform.Rotate(0, _rotateSnapAngle, 0);
             _lastRotation = _spawnedBuilding.transform.rotation;
         }
 
@@ -201,14 +219,25 @@ public class BuildTool : MonoBehaviour
         {
             var gridPosition = WorldGrid.GridPositionFromWorldPoint3D(hitInfo.point, 1f);
             _spawnedBuilding.transform.position = gridPosition;
-            
+        
             if (Mouse.current.leftButton.wasPressedThisFrame && !_spawnedBuilding.IsOverlapping)
             {
+                // Coloca a torre no chão e desativa o preview
                 _spawnedBuilding.PlaceBuilding();
+                //DeactivatePreviewAndPrefab(); // Chama o método para desativar o preview
+            
+                // Mantém uma cópia dos dados da torre atual antes de criar um novo preview
                 var dataCopy = _spawnedBuilding.AssignedData;
+            
+                // Define o preview como null para que um novo possa ser criado
                 _spawnedBuilding = null;
+            
+                // Cria um novo preview com os dados copiados da torre anterior
                 ChoosePart(dataCopy);
+                Debug.Log("colocou");
+                DeactivatePreviewAndPrefab();
             }   
         }
     }
+
 }

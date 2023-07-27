@@ -9,6 +9,7 @@ TagManager:
   - Castelo
   - Inimigo
   - InimigoDeath
+  - PreviewTower
   layers:
   - Default
   - TransparentFX

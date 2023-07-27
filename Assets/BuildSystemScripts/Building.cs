@@ -22,6 +22,12 @@ public class Building : MonoBehaviour
     public bool FlaggedForDelete => _flaggedForDelete;
 
     private BuildingSaveData SaveData;
+    public BuildTool buildTool;
+
+    public void Start()
+    {
+        buildTool = FindObjectOfType<BuildTool>();
+    }
 
     public void Init(BuildingData data, BuildingSaveData saveData = null)
     {
@@ -40,9 +46,12 @@ public class Building : MonoBehaviour
         _defaultMaterial = _renderer.material;
 
         _colliders = _graphic.transform.Find("Colliders");
+        
         if (_colliders != null) _colliders.gameObject.SetActive(false);
+        
 
         if (saveData != null) SaveData = saveData;
+
     }
     
     public void PlaceBuilding()
@@ -52,6 +61,12 @@ public class Building : MonoBehaviour
         UpdateMaterial(_defaultMaterial);
         gameObject.layer = 6;
         gameObject.name = _assignedData.DisplayName + " - " + transform.position;
+        
+        if (transform.childCount > 0)
+        {
+            Transform primeiroFilho = transform.GetChild(0);
+            primeiroFilho.gameObject.tag = "Tower";
+        }
     }
 
 

@@ -17,13 +17,19 @@ public class TowerController : MonoBehaviour
     private void Update()
     {
         FindClosestEnemy();
-
+        
         if (targetEnemy != null)
         {
             // Verificar se o inimigo está dentro do alcance de ataque
             float distanceToEnemy = Vector3.Distance(towerObject.position, targetEnemy.position);
             if (distanceToEnemy <= attackRange)
             {
+                if (gameObject.tag.Equals("PreviewTower"))
+                {
+                    Debug.Log("tag previewTower");
+                }
+                else if(gameObject.tag.Equals("Tower"))
+                {
                 RotateTowerTowardsEnemy();
 
                 shootingTimer += Time.deltaTime;
@@ -31,6 +37,8 @@ public class TowerController : MonoBehaviour
                 {
                     shootingTimer = 0f;
                     Shoot();
+                }
+                    
                 }
             }
         }
