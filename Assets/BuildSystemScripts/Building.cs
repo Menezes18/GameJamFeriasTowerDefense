@@ -23,10 +23,12 @@ public class Building : MonoBehaviour
 
     private BuildingSaveData SaveData;
     public BuildTool buildTool;
+    public GameManager gameManager;
 
     public void Start()
     {
         buildTool = FindObjectOfType<BuildTool>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void Init(BuildingData data, BuildingSaveData saveData = null)
