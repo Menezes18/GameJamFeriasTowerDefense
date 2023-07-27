@@ -5,9 +5,11 @@ public class GameManager : MonoBehaviour
     public int maxCastleHealth = 100;
     private int castleHealth;
     public int playerMoney = 0;
+    public GameManagerUI gameManagerUI;
 
     void Start()
     {
+        gameManagerUI = FindObjectOfType<GameManagerUI>();
         castleHealth = maxCastleHealth;
     }
 
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     public void DamageCastle(int damageAmount)
     {
         castleHealth -= damageAmount;
+        
         if (castleHealth <= 0)
         {
             castleHealth = 0;

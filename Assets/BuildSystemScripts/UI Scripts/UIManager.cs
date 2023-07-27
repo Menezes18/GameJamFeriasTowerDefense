@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class UIManager : MonoBehaviour
 {
     public GameObject BuildPanel;
+    private bool isPanelOpen = false;
 
     private void Start()
     {
@@ -18,14 +19,29 @@ public class UIManager : MonoBehaviour
     {
         if (Keyboard.current.tabKey.wasPressedThisFrame)
         {
-            BuildPanel.SetActive(true);
-            SetMouseCursorState(true); // Ativar o cursor quando o painel estiver visível.
+            if (isPanelOpen)
+            {
+                ClosePainel();
+            }
+            else
+            {
+                OpenPanel();
+            }
         }
+    }
+
+    public void OpenPanel()
+    {
+        BuildPanel.SetActive(true);
+        SetMouseCursorState(true); // Ativar o cursor quando o painel estiver visível.
+        isPanelOpen = true;
     }
 
     public void ClosePainel()
     {
         BuildPanel.SetActive(false);
+        SetMouseCursorState(false); // Desativar o cursor ao fechar o painel.
+        isPanelOpen = false;
     }
 
     public void SetMouseCursorState(bool newState)

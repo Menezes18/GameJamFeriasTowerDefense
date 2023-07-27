@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public bool isDead = false;
 
     public WaveManager waveManager;
+    public GameManager gameManager;
 
     private NavMeshAgent navMeshAgent;
     private bool isAttacking;
@@ -23,6 +24,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         isAttacking = false;
         attackTimer = attackInterval;
@@ -106,6 +108,8 @@ public class EnemyController : MonoBehaviour
     private void Attack()
     {
         Debug.Log("Inimigo atacando!");
+        gameManager.DamageCastle(10);
+        Destroy(gameObject);
 
         // Lógica de ataque aqui (por exemplo, causar dano ao jogador).
     }
