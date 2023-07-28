@@ -71,6 +71,7 @@
      <Compile Include="Assets\BuildSystemScripts\SaveLoad\SaveData.cs" />
      <Compile Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Scenes\2 NPRStyles RobotKyle\Scripts\DemoController.cs" />
      <Compile Include="Assets\BuildSystemScripts\Building.cs" />
+     <Compile Include="Assets\Scripts\TowerControllergun2.cs" />
      <Compile Include="Assets\Scripts\PreviewController.cs" />
      <Compile Include="Assets\InputSystem\ControlerInput.cs" />
      <Compile Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Scripts\DitherByCameraDistance.cs" />

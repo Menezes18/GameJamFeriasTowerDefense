@@ -64,7 +64,18 @@ public class EnemyController : MonoBehaviour
             HandleMovement();
         }
     }
+    public void SlowDown(float factor)
+    {
+        // Verifica se o inimigo já está morto ou parado
+        if (isDead || navMeshAgent.isStopped)
+            return;
 
+        // Garante que o fator de redução esteja no intervalo [0, 1]
+        factor = Mathf.Clamp01(factor);
+
+        // Define a nova velocidade do inimigo com base no fator de redução
+        navMeshAgent.speed = movementSpeed * factor;
+    }
     private void HandleDeath()
     {
         // Adiciona um Debug.Log indicando que o inimigo morreu.

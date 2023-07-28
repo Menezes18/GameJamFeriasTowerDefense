@@ -226,3 +226,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildTool: {fileID: 0}
+  gameManager: {fileID: 0}
