@@ -102,10 +102,10 @@ public class TowerControllergun2 : MonoBehaviour
         }
 
         // Show the enemy's speed in Debug.Log
-        if (targetEnemy != null)
-        {
-            enemyController.SlowDown(1);
-        }
+        // if (targetEnemy != null)
+        // {
+        //     enemyController.SlowDown(1);
+        // }
     }
 
     private void OnDrawGizmosSelected()

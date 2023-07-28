@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 48d53c195504f4a02b5ed013f797c723
+guid: 18be87537a76998419ccd7efbef79153
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gun1
-    second: {fileID: 2100000, guid: 25fb11cee22b84e34af20c4f7fed2f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gun2
-    second: {fileID: 2100000, guid: 5a70cdd45f9434025ae30de7ed379c89, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Transparent
-    second: {fileID: 2100000, guid: 4df2f9d00bcac4055a1f39b2b645deb1, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
