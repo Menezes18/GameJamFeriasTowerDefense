@@ -60,6 +60,7 @@
      <Compile Include="Assets\BuildSystemScripts\BuildTool.cs" />
      <Compile Include="Assets\BuildSystemScripts\SaveLoad\SaveGameManager.cs" />
      <Compile Include="Assets\BuildSystemScripts\UI Scripts\BuildingPanelUI.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Scripts\ShowcaseDemoController.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
