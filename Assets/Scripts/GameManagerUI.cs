@@ -85,4 +85,16 @@ public class GameManagerUI : MonoBehaviour
         Cursor.visible = newState;
         Cursor.lockState = newState ? CursorLockMode.Confined : CursorLockMode.Locked;
     }
+
+
+    // Método para fechar o painel de menu e ocultar o cursor
+    public void CloseMenu()
+    {
+        // Fecha o painel de menu
+        menuObject.SetActive(false);
+
+        // Oculta o cursor
+        SetMouseCursorState(false);
+        Debug.Log("A");
+    }
 }
