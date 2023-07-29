@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3ac7385a060344118f8789d500b82f0
+guid: b8a98253f50d6498e9be974ceb596a0f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ToonCube
+      name: IceBlue
     second: {fileID: 2100000, guid: 25fb11cee22b84e34af20c4f7fed2f5e, type: 2}
   materials:
     materialImportMode: 2
@@ -95,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

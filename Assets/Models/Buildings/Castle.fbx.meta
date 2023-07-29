@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 6f6ef46fb563653439ca48ccac1259f9
+guid: 4bf22e49501b548feb6cc29bda6affa5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toon
+    second: {fileID: 2100000, guid: 25fb11cee22b84e34af20c4f7fed2f5e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
