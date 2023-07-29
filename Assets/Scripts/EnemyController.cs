@@ -35,6 +35,7 @@ public class EnemyController : MonoBehaviour
         
 
         navMeshAgent.speed = movementSpeed; // Configura a velocidade de movimento do inimigo.
+        
         GameObject targetObject = GameObject.FindGameObjectWithTag(attackTargetTag);
         if (targetObject != null)
         {

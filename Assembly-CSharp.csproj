@@ -248,6 +248,7 @@
      <Folder Include="Assets\Media" />
      <Folder Include="Assets\Models\Characters\Crab" />
      <Folder Include="Assets\Prefabs\Towers\IceLevel\TwoTowers" />
+     <Folder Include="Assets\Models\Characters\Polar" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Folder Include="Assets\Environment\Shaders" />
      <Folder Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\Shaders" />
