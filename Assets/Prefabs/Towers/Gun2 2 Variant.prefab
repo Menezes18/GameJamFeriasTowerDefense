@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 18be87537a76998419ccd7efbef79153,
         type: 3}
       propertyPath: m_TagString
-      value: Tower
+      value: PreviewTower
       objectReference: {fileID: 0}
     - target: {fileID: 4120765400611960444, guid: 18be87537a76998419ccd7efbef79153,
         type: 3}
@@ -256,6 +256,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2085055251962053577}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 18be87537a76998419ccd7efbef79153,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2486946009157095385}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 18be87537a76998419ccd7efbef79153,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4630127451776722875}
     - targetCorrespondingSourceObject: {fileID: -3133498875991405556, guid: 18be87537a76998419ccd7efbef79153,
         type: 3}
       insertIndex: -1
@@ -358,3 +366,38 @@ MonoBehaviour:
   attackRange: 10
   towerObject: {fileID: 5361418145824289535}
   enemyController: {fileID: 0}
+--- !u!65 &-2486946009157095385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853947598900741575}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4630127451776722875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853947598900741575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5d453c7214d03498c1db12bd586fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildTool: {fileID: 0}
+  gameManager: {fileID: 0}

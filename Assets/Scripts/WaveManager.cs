@@ -16,11 +16,14 @@ public class WaveManager : MonoBehaviour
     public int currentWaveEnemiesAlive;
     public bool automatico = true;
     
-    private int currentWave = 0;
+    public int currentWave = 0;
+
+    public GameManagerUI gamemanagerui;
 
     private void Start()
     {
         SpawnWave();
+        gamemanagerui = FindObjectOfType<GameManagerUI>();
         //InvokeRepeating("SpawnWave", waveInterval, waveInterval);
     }
 
@@ -48,6 +51,7 @@ public class WaveManager : MonoBehaviour
             Debug.Log("manual");
             SpawnWave();
         }
+        ShowWaveProgress();
     }
 
     private void SpawnEnemies(int numEnemies)
@@ -78,7 +82,11 @@ public class WaveManager : MonoBehaviour
         }
         
     }
-
+    public void ShowWaveProgress()
+    {
+        Debug.Log($"Wave {currentWave}/{maxWaves}");
+        
+    }
     private GameObject GetRandomEnemyPrefab()
     {
         int randomIndex = Random.Range(0, enemyPrefabs.Count);

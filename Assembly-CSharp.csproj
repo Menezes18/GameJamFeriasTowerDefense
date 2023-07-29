@@ -124,6 +124,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\Font\paperkind\More Info.txt" />
      <Folder Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\3D Game Kit - Character Pack\Characters\Ellen\Textures" />
+     <Folder Include="Assets\Models\Characters\Turtle" />
      <Folder Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\UnityChanSSU\Prefabs" />
      <Folder Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\UnityChanSSU\Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
@@ -136,6 +137,7 @@
      <Folder Include="Assets\Project" />
      <Folder Include="Assets\Thirdparty\Ciathyza\Gridbox Prototype Materials\Textures" />
      <None Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\Shaders\GradientSkybox.shader" />
+     <Folder Include="Assets\Models\Characters\Wairus" />
      <Folder Include="Assets\Scenes\PinguTest" />
      <Folder Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\UnityChanSSU\Models" />
      <Folder Include="Assets\Prefabs" />
@@ -194,6 +196,7 @@
      <Folder Include="Assets\TutorialInfo\Icons" />
      <Folder Include="Assets\MoviementPlayer\ThirdPersonController\Character\Materials" />
      <Folder Include="Assets\Models\Characters" />
+     <Folder Include="Assets\Prefabs\Inimigos" />
      <Folder Include="Assets\TutorialInfo" />
      <Folder Include="Assets\Models" />
      <Folder Include="Assets\Thirdparty\Ciathyza\Gridbox Prototype Materials\Demo" />
@@ -205,6 +208,7 @@
      <Folder Include="Assets\Scenes\Playground 1" />
      <Folder Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Plugins\3D Game Kit - Character Pack" />
      <Folder Include="Assets\OToon- URP Toon Shading\Demo(Can be delete)\Scenes\4 Stylized Character Ellen\Materials\CrispRamp" />
+     <Folder Include="Assets\Models\Characters\Crab 1" />
      <Folder Include="Assets\BuildSystemScripts\SaveLoad" />
      <Folder Include="Assets\Prefabs\Towers\IceLevel\ThreeTowers" />
      <Folder Include="Assets\Scenes" />

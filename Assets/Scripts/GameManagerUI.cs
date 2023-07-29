@@ -6,12 +6,15 @@ public class GameManagerUI : MonoBehaviour
 {
     public Slider castleHealthSlider;
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI waveText;
     public GameObject menuObject;
 
     private GameManager gameManager;
+    private WaveManager waveManager;
 
     void Start()
     {
+        waveManager = FindObjectOfType<WaveManager>();
         gameManager = FindObjectOfType<GameManager>();
         UpdateUI();
     }
@@ -32,6 +35,7 @@ public class GameManagerUI : MonoBehaviour
     private void UpdateUI()
     {
         UpdateCastleHealthUI();
+        UpdateWaveUi();
         UpdateMoneyUI();
     }
 
@@ -47,6 +51,10 @@ public class GameManagerUI : MonoBehaviour
         moneyText.text = gameManager.GetPlayerMoney().ToString() + "$";
     }
 
+    private void UpdateWaveUi()
+    {
+        waveText.text = "wave " + waveManager.currentWave.ToString() + "/" + waveManager.maxWaves.ToString();
+    }
     // Método chamado quando o botão "QuitButton" é pressionado
     public void OnQuitButtonPressed()
     {
