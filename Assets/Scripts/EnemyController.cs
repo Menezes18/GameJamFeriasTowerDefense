@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
@@ -21,6 +22,10 @@ public class EnemyController : MonoBehaviour
     private float attackTimer;
     private int currentHealth;
     private Animator animator;
+    
+    
+    public Slider healthSlider; 
+    public Image healthFill;
 
     private void Start()
     {
@@ -45,10 +50,15 @@ public class EnemyController : MonoBehaviour
         {
             Debug.LogWarning("Nenhum objeto encontrado com a tag " + attackTargetTag);
         }
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = maxHealth;
+        healthFill.color = Color.green;
     }
 
     private void Update()
     {
+        
+        
         // Verifica se o inimigo está morto
         if (isDead)
         {
@@ -129,14 +139,21 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        
         if (isDead) return;
 
         currentHealth -= damage;
+        healthSlider.value = currentHealth;
 
-        // Chamar a animação de dano (se houver) ou executar outras ações em resposta ao dano.
+        // Define a cor da barra de vida com base na vida restante
+        float healthPercentage = (float)currentHealth / maxHealth;
+        healthFill.color = Color.Lerp(Color.red, Color.green, healthPercentage);
+       
+
 
         if (currentHealth <= 0)
         {
+            Destroy(healthSlider.gameObject);
             Die();
         }
     }
