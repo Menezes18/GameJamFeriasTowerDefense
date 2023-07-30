@@ -74,6 +74,7 @@ public class GameManagerUI : MonoBehaviour
     {
         // Volta para a cena principal (outra cena)
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
     }
 
     // Método chamado quando o botão "RestartButton" é pressionado
@@ -83,7 +84,7 @@ public class GameManagerUI : MonoBehaviour
         // Reinicia o jogo (recarrega a cena atual)
         
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        Time.timeScale = 1f;
+        Time.timeScale = 1;
     }
     
 

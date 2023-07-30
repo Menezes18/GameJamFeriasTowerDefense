@@ -55,6 +55,6 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Game Over - Castle Destroyed!");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 }

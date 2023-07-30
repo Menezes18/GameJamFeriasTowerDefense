@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using TMPro; 
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
@@ -19,12 +20,17 @@ public class WaveManager : MonoBehaviour
     public int currentWave = 0;
 
     public GameManagerUI gamemanagerui;
+    public TutorialController tutorialController;
+
+    public bool tutorial = false;
 
     private void Start()
     {
-        SpawnWave();
+        
+        //SpawnWave();
         gamemanagerui = FindObjectOfType<GameManagerUI>();
-        //InvokeRepeating("SpawnWave", waveInterval, waveInterval);
+        tutorialController = FindObjectOfType<TutorialController>();
+
     }
 
     private void SpawnWave()
@@ -45,6 +51,13 @@ public class WaveManager : MonoBehaviour
 
     public void Update()
     {
+        if (tutorial)
+        {
+            if (currentWave == 5)
+            {
+                tutorialController.Concluido();
+            }
+        }
         EnemyDefeated();
         if (Keyboard.current.tKey.wasPressedThisFrame && currentWaveEnemiesAlive <= 0)
         {
