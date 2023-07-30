@@ -11,6 +11,8 @@ public class UiButtonData : MonoBehaviour
     public int[] towerCosts;
     public int money;
 
+    public GameObject pop;
+
     public void Start()
     {
         uiManager = FindObjectOfType<UIManager>();
@@ -39,7 +41,8 @@ public class UiButtonData : MonoBehaviour
             }
             else
             {
-                Debug.Log("Dinheiro insuficiente para construir esta torre.");
+                pop.SetActive(true);
+                Invoke("desativarpop", 1.8f);
             }
         }
         else
@@ -49,8 +52,8 @@ public class UiButtonData : MonoBehaviour
     }
 
 
-    public void test()
+    public void desativarpop()
     {
-        Debug.Log("Aaaaaaa");
+        pop.SetActive(false);
     }
 }
