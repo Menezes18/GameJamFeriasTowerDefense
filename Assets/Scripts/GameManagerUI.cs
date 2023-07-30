@@ -79,9 +79,13 @@ public class GameManagerUI : MonoBehaviour
     // Método chamado quando o botão "RestartButton" é pressionado
     public void OnRestartButtonPressed()
     {
+        
         // Reinicia o jogo (recarrega a cena atual)
+        
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
+    
 
     // Método para ativar ou desativar o menu e o cursor
     private void ToggleMenuAndCursor()
