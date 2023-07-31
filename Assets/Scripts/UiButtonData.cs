@@ -20,6 +20,11 @@ public class UiButtonData : MonoBehaviour
         money = gameManager.playerMoney;
     }
 
+    public void Update()
+    {
+        money = gameManager.playerMoney;
+    }
+
     public void OnButtonClick(int towerIndex)
     {
         if (towerIndex >= 0 && towerIndex < towers.Length)

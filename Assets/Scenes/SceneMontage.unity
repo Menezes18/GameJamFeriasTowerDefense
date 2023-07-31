@@ -1476,7 +1476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCastleHealth: 100
-  playerMoney: 580
+  playerMoney: 200
   gameManagerUI: {fileID: 0}
 --- !u!4 &189010796
 Transform:
