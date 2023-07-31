@@ -5053,7 +5053,7 @@ MonoBehaviour:
   attackRange: 2
   attackInterval: 2
   attackDamage: 10
-  maxHealth: 40
+  maxHealth: 110
   movementSpeed: 1.8
   isDead: 0
   waveManager: {fileID: 0}

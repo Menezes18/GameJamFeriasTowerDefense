@@ -6205,7 +6205,7 @@ MonoBehaviour:
   attackRange: 2
   attackInterval: 2
   attackDamage: 10
-  maxHealth: 50
+  maxHealth: 130
   movementSpeed: 2
   isDead: 0
   waveManager: {fileID: 0}

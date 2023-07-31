@@ -1277,7 +1277,7 @@ MonoBehaviour:
   - {fileID: 5543559211399990620, guid: 7596a6e9c84a341448f475788653fc42, type: 3}
   maxWaves: 50
   baseNumEnemies: 1
-  maxExtraEnemiesPerWave: 1
+  maxExtraEnemiesPerWave: 2
   waveInterval: 5
   currentWaveEnemiesAlive: 0
   automatico: 0
