@@ -9,11 +9,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 99d436f7b1c5f46f7946dec013b44c56
   - enabled: 1
-    path: Assets/Scenes/Game1.unity
-    guid: 813ff3ea02bca8b47821ca10f8c5cbea
+    path: Assets/Scenes/SelectLevel.unity
+    guid: 3eb6e2d2a2b244ba98e3761f0950bfdc
   - enabled: 1
-    path: Assets/Scenes/SceneMontage.unity
+    path: Assets/Scenes/Level0.unity
+    guid: 3fec62916a1e71d4984f373014748f76
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
     guid: 1e98d334f31d44af9b8dea315ba3964f
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 3bee90913789cbf4b91e1c9997fe5ef0
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: fc268a584fc833642bae868ca7b789c0
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 3c0737d5e9ac74cb7b0dc7b8615ce7f5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

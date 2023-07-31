@@ -23,6 +23,6 @@ public class MainMenu : MonoBehaviour
 
     public void menu()
     {
-        Debug.Log("PLAY");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SelectLevel");
     }
 }

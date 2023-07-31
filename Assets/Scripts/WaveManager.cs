@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro; 
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour
@@ -45,7 +46,13 @@ public class WaveManager : MonoBehaviour
         else
         {
             Debug.Log("Max waves reached. Game Over!");
-            // Aqui você pode adicionar a lógica para terminar o jogo ou mostrar uma tela de vitória.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SelectLevel");
+            if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+            {
+                PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+                PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+                PlayerPrefs.Save();
+            }
         }
     }
 
@@ -53,7 +60,7 @@ public class WaveManager : MonoBehaviour
     {
         if (tutorial)
         {
-            if (currentWave == 5)
+            if (currentWave == maxWaves)
             {
                 tutorialController.Concluido();
             }

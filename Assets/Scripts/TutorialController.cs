@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro; // Ou use "using UnityEngine.UI;" se estiver usando o pacote Text regular.
+using TMPro;
+using UnityEngine.SceneManagement; // Ou use "using UnityEngine.UI;" se estiver usando o pacote Text regular.
 
 public class TutorialController : MonoBehaviour
 {
@@ -21,6 +23,7 @@ public class TutorialController : MonoBehaviour
     public bool sPressed = false;
     public bool dPressed = false;
     
+
     void Update()
     {
         if (acabou)
@@ -122,8 +125,16 @@ public class TutorialController : MonoBehaviour
     public void Concluido()
     {
         ShowInfoText("Você completou o tutorial! PARABENS!");
+
+        // Update the PlayerPrefs for level completion
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
+        }
+
         Invoke("menu", 3f);
-        
     }
 
     public void limparTexto()
@@ -134,6 +145,6 @@ public class TutorialController : MonoBehaviour
 
     public void menu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SelectLevel");
     }
 }
