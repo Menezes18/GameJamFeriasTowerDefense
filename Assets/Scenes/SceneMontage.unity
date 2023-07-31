@@ -32292,7 +32292,7 @@ MonoBehaviour:
   buildTool: {fileID: 736807552}
   uiManager: {fileID: 0}
   gameManager: {fileID: 0}
-  towerCosts: 64000000c80000002c010000
+  towerCosts: 3200000064000000c8000000
   money: 0
   pop: {fileID: 1730648177}
 --- !u!4 &1626946625
