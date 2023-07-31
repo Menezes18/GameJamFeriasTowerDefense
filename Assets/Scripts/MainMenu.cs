@@ -25,4 +25,8 @@ public class MainMenu : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("SelectLevel");
     }
+        public void menuprin()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        }
 }
