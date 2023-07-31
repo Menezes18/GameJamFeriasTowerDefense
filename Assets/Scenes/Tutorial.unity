@@ -1476,7 +1476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCastleHealth: 100
-  playerMoney: 580
+  playerMoney: 200
   gameManagerUI: {fileID: 0}
 --- !u!4 &189010796
 Transform:
@@ -19755,7 +19755,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 189010794}
         m_TargetAssemblyTypeName: GameManagerUI, Assembly-CSharp
         m_MethodName: ButtonWaveAutomatic
         m_Mode: 1
@@ -32721,7 +32721,7 @@ GameObject:
   - component: {fileID: 1626946625}
   - component: {fileID: 1626946624}
   m_Layer: 0
-  m_Name: UIBotton
+  m_Name: UIBotton-Precodasarmas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32746,7 +32746,7 @@ MonoBehaviour:
   buildTool: {fileID: 736807552}
   uiManager: {fileID: 0}
   gameManager: {fileID: 0}
-  towerCosts: 64000000c80000002c010000
+  towerCosts: 3200000064000000c8000000
   money: 0
   pop: {fileID: 1730648177}
 --- !u!4 &1626946625

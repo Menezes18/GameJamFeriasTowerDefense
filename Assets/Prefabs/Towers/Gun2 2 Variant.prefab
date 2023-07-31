@@ -368,9 +368,9 @@ MonoBehaviour:
   - {fileID: 3730621610562547618}
   - {fileID: 4369790088013629145}
   shootingInterval: 2
-  damage: 20
+  damage: 15
   rotationSpeed: 5
-  attackRange: 10
+  attackRange: 7
   towerObject: {fileID: 5361418145824289535}
   enemyController: {fileID: 0}
 --- !u!65 &-2486946009157095385

@@ -5853,8 +5853,8 @@ MonoBehaviour:
   attackRange: 2
   attackInterval: 2
   attackDamage: 10
-  maxHealth: 20
-  movementSpeed: 1
+  maxHealth: 80
+  movementSpeed: 0.8
   isDead: 0
   waveManager: {fileID: 0}
   gameManager: {fileID: 0}

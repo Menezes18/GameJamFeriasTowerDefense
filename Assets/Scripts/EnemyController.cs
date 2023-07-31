@@ -164,7 +164,7 @@ public class EnemyController : MonoBehaviour
         waveManager.currentWaveEnemiesAlive--;
 
         isDead = true;
-        gameManager.EarnMoney(40); //colocando dinheiro para o player
+        gameManager.EarnMoney(25); //colocando dinheiro para o player
         animator.SetBool("Death", true);
 
         currentHealth = 0;

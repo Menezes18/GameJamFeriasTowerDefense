@@ -219,7 +219,7 @@ MonoBehaviour:
     type: 3}
   shootingPoint: {fileID: 2732596606918314750}
   shootingInterval: 2
-  damage: 20
+  damage: 10
   rotationSpeed: 5
   attackRange: 10
   towerObject: {fileID: 4582235817236169156}

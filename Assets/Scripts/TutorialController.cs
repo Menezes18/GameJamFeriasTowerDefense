@@ -11,7 +11,9 @@ public class TutorialController : MonoBehaviour
     private bool tower1Selected = false;
     private bool passo1 = false;
     private bool passo2 = true;
+    private bool passo3 = false;
     private bool click = false;
+    private bool acabou = false;
     
     // Variáveis para armazenar se cada tecla foi pressionada
     public bool wPressed = false;
@@ -20,69 +22,94 @@ public class TutorialController : MonoBehaviour
     public bool dPressed = false;
     
     void Update()
-    {   
-        if (shopOpen && towerSelected)
+    {
+        if (acabou)
         {
-            
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            ShowInfoText(" ");
+        }
+
+        if (!acabou)
+        {
+
+
+            if (shopOpen && towerSelected)
             {
-                ShowInfoText("Muito bem! Coloque ela no chão, use o R para rotacionar");
-                
-                if (Mouse.current.leftButton.wasPressedThisFrame && click)
+
+                if (Mouse.current.leftButton.wasPressedThisFrame)
                 {
-                    passo1 = true;
+                    ShowInfoText("Muito bem! Coloque ela no chão, use o R para rotacionar");
+
+                    if (Mouse.current.leftButton.wasPressedThisFrame && click)
+                    {
+                        passo1 = true;
+                    }
+
+                    click = true;
+
+
                 }
-
-                click = true;
-
-
             }
-        }
-        if (shopOpen && !towerSelected)
-        {
-            if (!tower1Selected)
+
+            if (shopOpen && !towerSelected)
             {
-                ShowInfoText("Muito bem! Click na primeira torre! Ganhe mais dinheiro eliminando os inimigos");
-                //ShowInfoText("Muito bem! Coloque ela no chão, use o R para rotacionar");
-                towerSelected = true;
-                
+                if (!tower1Selected)
+                {
+                    ShowInfoText("Muito bem! Click na primeira torre! Ganhe mais dinheiro eliminando os inimigos");
+                    //ShowInfoText("Muito bem! Coloque ela no chão, use o R para rotacionar");
+                    towerSelected = true;
+
+                }
             }
-        }
-        if (passo2)
-        {
-            ShowInfoText("Aperte W, A, S, D para movimentar-se");
-            
-            // Verifica se as teclas foram pressionadas nesta frame e atualiza as variáveis bool
-            if (Keyboard.current.wKey.wasPressedThisFrame) wPressed = true;
-            if (Keyboard.current.aKey.wasPressedThisFrame) aPressed = true;
-            if (Keyboard.current.sKey.wasPressedThisFrame) sPressed = true;
-            if (Keyboard.current.dKey.wasPressedThisFrame) dPressed = true;
 
-            // Se alguma das teclas foi pressionada, avança para o próximo passo
-            if (wPressed && aPressed && sPressed && dPressed)
+            if (passo2)
             {
-                passo2 = false;
-                ShowInfoText("Muito bem! Pressione Tab para abrir a loja de Towers use para proteger o seu castelo! ");
+                ShowInfoText("Aperte W, A, S, D para movimentar-se");
+
+                // Verifica se as teclas foram pressionadas nesta frame e atualiza as variáveis bool
+                if (Keyboard.current.wKey.wasPressedThisFrame) wPressed = true;
+                if (Keyboard.current.aKey.wasPressedThisFrame) aPressed = true;
+                if (Keyboard.current.sKey.wasPressedThisFrame) sPressed = true;
+                if (Keyboard.current.dKey.wasPressedThisFrame) dPressed = true;
+
+                // Se alguma das teclas foi pressionada, avança para o próximo passo
+                if (wPressed && aPressed && sPressed && dPressed)
+                {
+                    passo2 = false;
+                    ShowInfoText(
+                        "Muito bem! Pressione Tab para abrir a loja de Towers use para proteger o seu castelo! ");
+                }
             }
-        }
 
-        if (Keyboard.current.tabKey.wasPressedThisFrame)
-        {
-            if (!shopOpen && !towerSelected)
+            if (Keyboard.current.tabKey.wasPressedThisFrame)
             {
-                shopOpen = true;
-                ShowInfoText("Muito bem! Click na primeira torre!");
+                if (!shopOpen && !towerSelected)
+                {
+                    shopOpen = true;
+                    ShowInfoText("Muito bem! Click na primeira torre!");
+                }
             }
-        }
 
-        // Cuidado com o dinheiro
+            // Cuidado com o dinheiro
 
-        if (passo1)
-        {
-            ShowInfoText("Muito Bem! Aperte T para iniciar a wave de inimigos!");
-            if (Keyboard.current.tKey.wasPressedThisFrame)
+            if (passo1)
             {
-                ShowInfoText(" ");
+                ShowInfoText("Muito Bem! Aperte T para iniciar a wave de inimigos!");
+                if (Keyboard.current.tKey.wasPressedThisFrame)
+                {
+                    ShowInfoText("Muito Bem! Agora vou explicar o pause! Aperte P!");
+                    passo3 = true;
+                    passo1 = false;
+                }
+            }
+
+            if (passo3)
+            {
+                if (Keyboard.current.pKey.wasPressedThisFrame)
+                {
+                    ShowInfoText("A engrenagem, deixa a wave no modo automatico ou quando apertar T para iniciar!");
+                    Invoke("limparTexto", 3f);
+
+                }
             }
         }
     }
@@ -95,5 +122,18 @@ public class TutorialController : MonoBehaviour
     public void Concluido()
     {
         ShowInfoText("Você completou o tutorial! PARABENS!");
+        Invoke("menu", 3f);
+        
+    }
+
+    public void limparTexto()
+    {
+        acabou = true;
+        ShowInfoText(" ");
+    }
+
+    public void menu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 }
