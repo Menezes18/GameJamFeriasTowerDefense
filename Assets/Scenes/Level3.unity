@@ -1276,7 +1276,7 @@ MonoBehaviour:
   - {fileID: 7466791983419457135, guid: baa395f20144d8a40852447ae2baba0a, type: 3}
   - {fileID: 1555685043331309475, guid: 08fbd962a4f6e4b4596cdc13c060b9e6, type: 3}
   - {fileID: 5543559211399990620, guid: 7596a6e9c84a341448f475788653fc42, type: 3}
-  maxWaves: 25
+  maxWaves: 20
   baseNumEnemies: 1
   maxExtraEnemiesPerWave: 2
   waveInterval: 5
@@ -1477,7 +1477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCastleHealth: 100
-  playerMoney: 200
+  playerMoney: 250
   gameManagerUI: {fileID: 0}
 --- !u!4 &189010796
 Transform:
@@ -16957,7 +16957,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 75b278ba7d36e4a428183d4460d25ffa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7653973
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 75b278ba7d36e4a428183d4460d25ffa,
         type: 3}
@@ -16967,7 +16967,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 75b278ba7d36e4a428183d4460d25ffa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -33.68525
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 75b278ba7d36e4a428183d4460d25ffa,
         type: 3}
